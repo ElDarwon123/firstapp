@@ -1,0 +1,31 @@
+---------INSTALACIONES----------------------
+
+instalar nest de forma global:
+npm i @nestjs/cli -g 
+
+- creador de id
+    npm i uuid
+- siguiente
+    npm i @types/uuid -D
+- ahora se hace este import en el .service (el "v4" crea id como String)
+    import { v4 } from 'uuid';
+- el class validator para validar que los datos que se metan sean los que son 
+    npm install class-validator --save
+------------ALGUNAS COSAS------------------------
+- npm run start:dev => es lo mismo que nodemon
+
+- npm nest build => convierte el code a js  
+
+- eliminar todo de src menos el main y app.module.ts
+
+- nest => va a mostrar todos los comando que se pueden ejecutar 
+
+- nest (generate o g) module <nombre> => creará un nuevo modulo dentro de src listo para trabajar y lo importará en app.module.ts
+
+- nest g controller <nombreDelModulo> => creará controladores en el modulo donde se requiera, creará 2 archivos 1 para producción y otro para testing, 
+  para no crear el archivo de testing solamente se escribe => nest generate controller <nombreDelModulo> --no-spec
+
+- nest g service <nombreDelModulo> => creará el file de servicios, ya sea para conectar la db o un json,
+  para no crear el archivo de testing solamente se escribe => nest g service <nombreDelModulo> --no-spec
+
+- app.useGlobalPipes(new ValidationPipe())  => se pone esto en el main para que las validaciones sirvan 
